@@ -6,7 +6,7 @@ const CompaniesFav = () => {
   const companiesFavorites = useSelector((state) => state.favorites.content);
   const dispatch = useDispatch();
   return (
-    <Col xs={"10"}>
+    <Col className="m-auto" xs={"10"}>
       <h2>Favorites Company</h2>
       {companiesFavorites.length !== 0 ? (
         <ListGroup>
