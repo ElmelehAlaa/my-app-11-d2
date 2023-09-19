@@ -13,6 +13,7 @@ const MainSearch = () => {
     dispatch(getQuery(e.target.value));
   };
   const isLoading = useSelector((state) => state.jobs.isLoading);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     dispatch(getJobs());
@@ -44,7 +45,7 @@ const MainSearch = () => {
             ? [...Array(3).keys()].map((num) => (
                 <Col
                   className="mb-3"
-                  key={`placeholder-${num}`}
+                  key={num}
                   xs={"12"}
                   style={{ minWidth: "200px", height: "80px", backgroundColor: "lightgray" }}
                 ></Col>

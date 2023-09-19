@@ -16,7 +16,6 @@ export const getQuery = (queryJob) => ({ type: GET_QUERY, payload: queryJob });
 export const getJobs = () => {
   return async (dispatch, getState) => {
     try {
-      dispatch({ type: GET_JOBS_LOADING_ON });
       let resp = await fetch("https://strive-benchmark.herokuapp.com/api/jobs?search=" + getState().query.content);
       if (resp.ok) {
         let fetchedJobs = await resp.json();
